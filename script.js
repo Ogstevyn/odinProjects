@@ -3,7 +3,7 @@
 0 should serve for Rock. 1 for paper. 2, for scissors.
 */
 function getComputerChoice(){
-    const randomNumbers = Math.floor(Math.random () *3);
+    const randomNumbers = Math.floor(Math.random () *3 + 1);
 
     if (randomNumbers === 0){
         return "rock";
@@ -62,13 +62,13 @@ function game(){
         const computerSelection = getComputerChoice();
         const result = singleRound(playerSelection, computerSelection);
 
-        //console.log(`Round ${round}: ${result}`)
+        console.log(`Round ${round}: ${result}`)
 
         if (result.includes("WIN")){
             playerScore++
         }
         
-        else if (result.includes("WIN")){
+        else if (result.includes("LOSE")){
             computerScore++
         }
     }
